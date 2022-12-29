@@ -1,2 +1,6 @@
-# egames
-Ecommerce of videogames
+# EGames
+Ecommerce of videoGames
+
+# Technologies
+    - Database: MySql
+    - Backend: Spring
