@@ -1,4 +1,5 @@
 #Settings
+**/application.properties
 
 # Miscellaneous
 **/*.java.hsp
