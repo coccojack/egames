@@ -13,5 +13,10 @@ public class Videogame {
     @Lob
     @Column(name = "image", columnDefinition = "MEDIUMBLOB")
     private byte[] image;
+    private String category;
+    private String description;
+    private Float price;
+    @ManyToOne
+    private Platform platform;
 
 }

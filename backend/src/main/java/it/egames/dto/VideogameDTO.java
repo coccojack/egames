@@ -4,5 +4,10 @@ import lombok.Data;
 
 @Data
 public class VideogameDTO {
-    String title;
+    private String title;
+    private String category;
+    private String description;
+    private Float price;
+
+    private String platformName;
 }
