@@ -16,3 +16,16 @@ By default credential to access will be root | root @ localhost:3306
 Create a new db named as you like at mysql server address.
 
 The name has to be set in application.properties file (exampled in example.properties as application_db).
+
+# Front-end Stack
+- React
+- Redux
+- Bootstrap
+
+## Install dependencies
+
+  npm install
+
+## Start the server
+
+  npm start
