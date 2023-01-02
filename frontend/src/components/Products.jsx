@@ -77,7 +77,7 @@ const Products = () => {
           <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Playstation 1")}>Playstation 5</button>
           <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("XBOX")}>XBOX</button>
           <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Nintendo Switch")}>Nintendo Switch</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("PC")}>PC</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Windows 11")}>Windows 11</button>
         </div>
 
         {filter.map((product) => {

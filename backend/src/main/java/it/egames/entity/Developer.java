@@ -7,16 +7,14 @@ import java.sql.Date;
 
 @Entity
 @Data
-public class Platform {
+public class Developer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @ManyToOne
-    private Producer producer;
+    private String surname;
     @Basic
-    private Date productionDate;
-    @OneToOne
-    private TechnicalFeatures technicalFeatures;
-
+    private Date birthDate;
+    @ManyToOne
+    private SoftwareHouse softwareHouse;
 }

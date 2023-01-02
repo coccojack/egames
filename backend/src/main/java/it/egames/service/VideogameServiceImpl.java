@@ -58,7 +58,7 @@ public class VideogameServiceImpl implements VideogameService {
 
     @Override
     public List<Videogame> getAll() {
-        log.info("{}.getAll - INIT", this.getClass().getSimpleName());
+//        log.info("{}.getAll - INIT", this.getClass().getSimpleName());
         return videogameRepository.findAll();
     }
 
@@ -73,7 +73,7 @@ public class VideogameServiceImpl implements VideogameService {
         if (videogame.isEmpty()) {
             return new ArrayList<>();
         }
-        List<Videogame> resultList = videogameRepository.findAllByPlatformAndCategory(videogame.get().getPlatform(), videogame.get().getCategory());
+        List<Videogame> resultList = videogameRepository.findAllByPlatformAndGenre(videogame.get().getPlatform(), videogame.get().getGenre());
         resultList.remove(videogame.get());
         return resultList;
     }
