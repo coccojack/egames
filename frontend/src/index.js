@@ -11,7 +11,7 @@ import { Home, Product, Products, Cart, Login, Register, Checkout, PageNotFound 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( <
-    BrowserRouter >
+BrowserRouter >
     <
     Provider store = { store } >
     <
@@ -43,8 +43,8 @@ root.render( <
     /> <
     Route path = "/product/*"
     element = { < PageNotFound / > }
-    /> <
-    /Routes> <
-    /Provider> <
-    /BrowserRouter>
+    /> 
+    </Routes> 
+    </Provider> 
+    </BrowserRouter>
 );

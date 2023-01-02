@@ -4,11 +4,12 @@ Ecommerce of videoGames
 # Technologies
     - Database: MySql
     - Backend: SpringBoot
+    - Frontend: React
 
 # Tips:
-## Docker setup for MySql DB
+## Docker container setup for MySql DB - using cmd in windows (change USERPROFILE variable to use powershell or bash)
 ```
-docker run --name=application_db -d mysql -p 3306:3306
+docker run --name=egames_db -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -v %USERPROFILE%\.docker\volumes\egames:/var/lib/mysql mysql
 ```
 By default credential to access will be root | root @ localhost:3306
 

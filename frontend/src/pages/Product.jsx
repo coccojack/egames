@@ -133,14 +133,14 @@ const Product = () => {
                 <div key={item.id} className="card mx-4 text-center">
                   <img
                     className="card-img-top p-3"
-                    src={item.image}
+                    src={`data:image/jpeg;base64,${item.image}`}
                     alt="Card"
                     height={300}
                     width={300}
                   />
                   <div className="card-body">
                     <h5 className="card-title">
-                      {item.title.substring(0, 15)}...
+                      {item.title.substring(0, 15)}{item.title.length > 15 ? '...' : null }
                     </h5>
                   </div>
                   {/* <ul className="list-group list-group-flush">
@@ -181,7 +181,7 @@ const Product = () => {
               pauseOnClick={true}
               speed={50}
             >
-              {/* {loading2 ? <Loading2 /> : <ShowSimilarProduct />} */}
+              {loading2 ? <Loading2 /> : <ShowSimilarProduct />}
             </Marquee>
           </div>
         </div>
