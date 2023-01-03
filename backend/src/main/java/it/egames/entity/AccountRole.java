@@ -8,11 +8,9 @@ import lombok.Data;
 
 @Entity
 @Data
-public class GameMode {
+public class AccountRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String description;
-    private boolean internetRequired;
+    private String roleName;
 }

@@ -5,17 +5,14 @@ import lombok.Data;
 
 import java.sql.Date;
 
-@Entity
 @Data
-public class Developer {
+@Entity
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String surname;
     @Basic
-    private Date birthDate;
-    @ManyToOne
-    @JoinColumn(foreignKey = @ForeignKey(name = "FK_SOFTWARE_HOUSE_DEVELOPER"))
-    private SoftwareHouse softwareHouse;
+    private Date birthdate;
 }

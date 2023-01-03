@@ -3,17 +3,16 @@ package it.egames.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.sql.Date;
-
 @Entity
 @Data
-public class SoftwareHouse {
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    @ManyToOne
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK_CUSTOMER_ADDRESS"))
+    private Customer customer;
     private String country;
-    @Basic
-    private Date foundationDate;
-    private String website;
+    private String state;
+    private String zipCode;
 }

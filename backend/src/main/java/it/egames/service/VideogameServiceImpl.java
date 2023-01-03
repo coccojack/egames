@@ -1,8 +1,10 @@
 package it.egames.service;
 
 import it.egames.dto.VideogameDTO;
+import it.egames.entity.Genre;
 import it.egames.entity.Platform;
 import it.egames.entity.Videogame;
+import it.egames.repository.GenreRepository;
 import it.egames.repository.PlatformRepository;
 import it.egames.repository.VideogameRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +30,9 @@ public class VideogameServiceImpl implements VideogameService {
     PlatformRepository platformRepository;
 
     @Autowired
+    GenreRepository genreRepository;
+
+    @Autowired
     ModelMapper modelMapper;
 
     @Override
@@ -41,6 +46,14 @@ public class VideogameServiceImpl implements VideogameService {
             return Optional.empty();
         }
         videogame.setPlatform(targetPlatform.get());
+        if (Objects.isNull(videogameDTO.getGenre())) {
+            return Optional.empty();
+        }
+        Optional<Genre> genre = genreRepository.findByName(videogameDTO.getGenre());
+        if (genre.isEmpty()) {
+            return Optional.empty();
+        }
+        videogame.setGenre(genre.get());
         Videogame savedEntity = videogameRepository.save(videogame);
         return Optional.of(savedEntity);
     }
