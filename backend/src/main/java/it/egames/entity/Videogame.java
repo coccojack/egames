@@ -37,7 +37,7 @@ public class Videogame {
     private Date releaseDate;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "videogame_gamemode",
+            name = "videogame_game_mode",
             joinColumns = @JoinColumn(name = "videogame_id"),
             foreignKey = @ForeignKey(name = "FK_VG_GAMEMODE_MTM"),
             inverseJoinColumns = @JoinColumn(name = "gamemode_id", foreignKey = @ForeignKey(name = "FK_GAMEMODE_VG_MTM")))

@@ -14,4 +14,7 @@ public class Purchase {
     private Customer customer;
     private String status;
     private Float total;
+    @OneToOne
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK_PURCHASE_ADDRESS"))
+    private Address address;
 }
