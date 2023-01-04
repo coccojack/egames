@@ -87,8 +87,11 @@ const Products = () => {
                 <img
                   className="card-img-top p-3"
                   src={`data:image/jpeg;base64,${product.image}`}
+                  onError={({currentTarget})=>{
+                    currentTarget.onerror=null;
+                    currentTarget.src='./assets/no_image.jpeg';
+                  }}
                   alt="Card"
-                  height={300}
                 />
                 <div className="card-body">
                   <h5 className="card-title">
