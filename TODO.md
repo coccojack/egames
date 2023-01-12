@@ -1,4 +1,6 @@
 ## TODO:
+aggiungere la quantita in stock al videogame
+capire perche le tabelle su overleaf si sono rotte
 
 ---
 # E-R NOTES:
