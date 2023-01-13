@@ -1,6 +1,7 @@
 ## TODO:
 aggiungere la quantita in stock al videogame
-capire perche le tabelle su overleaf si sono rotte
+prevedere uno stato per l'acquisto
+costruire il diagramma ER a seguito delle modifiche
 
 ---
 # E-R NOTES:
