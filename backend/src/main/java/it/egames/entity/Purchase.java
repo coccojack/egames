@@ -3,6 +3,8 @@ package it.egames.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.sql.Date;
+
 @Entity
 @Data
 public class Purchase {
@@ -19,4 +21,6 @@ public class Purchase {
     @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "FK_PURCHASE_STATUS"))
     private Status status;
+    @Basic
+    private Date purchaseDate;
 }
