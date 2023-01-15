@@ -70,4 +70,5 @@ public class Videogame {
             foreignKey = @ForeignKey(name = "FK_VIDEOGAME_INPUTTYPE_MTM"),
             inverseJoinColumns = @JoinColumn(name = "input_type_id", foreignKey = @ForeignKey(name = "FK_INPUTTYPE_VIDEOGAME_MTM")))
     private Set<InputType> inputTypeSet;
+    private Integer stockQuantity;
 }

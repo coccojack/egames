@@ -12,9 +12,11 @@ public class Purchase {
     @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "FK_CUSTOMER"))
     private Customer customer;
-    private String status;
     private Float total;
     @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "FK_PURCHASE_ADDRESS"))
     private Address address;
+    @ManyToOne
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK_PURCHASE_STATUS"))
+    private Status status;
 }
