@@ -6,13 +6,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-@Entity
 @Data
-public class TechnicalFeatures {
+@Entity
+public class Specialty {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String cpu;
-    private String ram;
-    private String support;
+    private String name;
+    private String description;
 }

@@ -1,9 +1,9 @@
 package it.egames.repository;
 
-import it.egames.entity.Wishlist;
+import it.egames.entity.Status;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface WishlistRepository extends JpaRepository<Wishlist, Long> {
+public interface StatusRepository extends JpaRepository<Status,Long> {
 }

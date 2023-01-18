@@ -18,4 +18,7 @@ public class Developer {
     @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "FK_SOFTWARE_HOUSE_DEVELOPER"))
     private SoftwareHouse softwareHouse;
+    @ManyToOne
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK_SPECIALTY_DEVELOPER"))
+    private Specialty specialty;
 }
