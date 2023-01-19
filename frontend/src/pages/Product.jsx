@@ -25,7 +25,9 @@ const Product = () => {
     const getProduct = async () => {
       setLoading(true);
       setLoading2(true);
-      const response = await fetch(`http://localhost:8081/egames/videogame/id/${id}`);
+      const response = await fetch(`http://localhost:8081/egames/videogame/id/${id}`,{
+        method: 'GET',
+      });
       const data = await response.json();
       if(data.image != null){
         setProductImage(`data:image/jpeg;base64,${data.image}`)
@@ -36,10 +38,11 @@ const Product = () => {
       setProduct(data);
       setLoading(false);
       const response2 = await fetch(
-        `http://localhost:8081/egames/videogame/related/${id}`
+        `http://localhost:8081/egames/videogame/related/${id}`,{
+          method: 'GET',
+        }
       );
-      const data2 = await response2.json();
-      console.log(data2);
+      const data2 = await response2.json().catch((error)=>{});
       if(data2 != null){
         setSimilarProducts(data2);
         for (let i = 0; i < data2.length; i++) {
@@ -50,11 +53,8 @@ const Product = () => {
             data2[i].image=urlNoImage;
           }
         }
-        setLoading2(false);
       }
-      else{
-        setLoading2(true);
-      }
+      setLoading2(false);
     };
     getProduct();
   }, [id]);
