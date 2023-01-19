@@ -14,7 +14,7 @@ values (
         1,
         5,
         50,
-        (select id from platform p where p.name = 'Playstation 5'),
+        (select id from platform p where p.name = 'XBOX'),
         (select id from genre g where g.name = 'FPS'),
         (select id from software_house sh where sh.name='Activision'),
         (select id from developer d where d.software_house_id = (select id from software_house sh where sh.name = 'Activision') and d.specialty_id = (select id from specialty s where s.name='GAME DEVELOPER')),

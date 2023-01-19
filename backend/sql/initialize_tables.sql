@@ -104,7 +104,8 @@ values (1,'PS PAD','Controller classico di casa Sony per Playstation'),
 insert into videogame(id,title,description,release_date,pegi,player_num,adult_game,ingame_purchases,stock_quantity,price,platform_id,genre_id,software_house_id,game_dev_id,audio_dev_id,graph_dev_id)
 values (1,'God of War Ragnarok','Le avventure di Kratos continuano al Nord','2023-01-01','16+','1',0,0,5,50,3,1,2,4,5,6),
         (2,'Hearthstone','Il gioco di carte con i protagonisti di World of Warcraft','2018-01-01','8+','1',0,0,5,10,2,4,1,1,2,3),
-        (3,'GWENT','Il gioco di carte con i protagonisti di The Witcher 3','2018-01-01','8+','1',0,0,5,10,2,4,3,7,8,9);
+        (3,'GWENT','Il gioco di carte con i protagonisti di The Witcher 3','2018-01-01','8+','1',0,0,5,10,2,4,3,7,8,9),
+        (4,'Zelda Breath of the wild','Scopri un mondo di avventure insieme a Link','2018-01-01','8+','1',0,0,5,60,4,3,3,7,8,9);
 
 
 -- purchase_videogame
@@ -132,7 +133,8 @@ insert into videogame_theme(videogame_id,theme_id)
 values (1,1),
         (1,3),
         (2,1),
-        (3,1);
+        (3,1),
+        (4,1);
 
 -- videogame_game_mode
 insert into videogame_game_mode(videogame_id,gamemode_id)
@@ -141,7 +143,8 @@ values (1,1),
         (2,1),
         (2,3),
         (3,1),
-        (3,3);
+        (3,3),
+        (4,1);
 
 -- videogame_language
 insert into videogame_language(videogame_id,language_id)
@@ -159,11 +162,16 @@ values (1,1),
         (3,2),
         (3,3),
         (3,4),
-        (3,5);
-
+        (3,5),
+        (4,1),
+        (4,2),
+        (4,3),
+        (4,4),
+        (4,5);
 
 -- videogame_input_type
 insert into videogame_input_type(videogame_id,input_type_id)
 values (1,1),
         (2,4),
-        (3,4);
+        (3,4),
+        (4,3);
