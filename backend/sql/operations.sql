@@ -6,7 +6,7 @@ values ('Nome','Cognome','2023-01-01','nome.cognome@email.it','strongpwd',(selec
 insert into videogame(title,description,release_date,pegi,player_num,adult_game,ingame_purchases,stock_quantity,price,platform_id,genre_id,software_house_id,game_dev_id,audio_dev_id,graph_dev_id)
 values (
         'Call of duty 9',
-        'Affronta la tua battaglia.',
+        'Affronta la tua battaglia',
         '2023-01-01',
         '18+',
         '1',

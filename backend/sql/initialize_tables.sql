@@ -102,7 +102,7 @@ values (1,'PS PAD','Controller classico di casa Sony per Playstation'),
 
 -- videogame
 insert into videogame(id,title,description,release_date,pegi,player_num,adult_game,ingame_purchases,stock_quantity,price,platform_id,genre_id,software_house_id,game_dev_id,audio_dev_id,graph_dev_id)
-values (1,'God of War Ragnarok','Le avventure di Kratos continuano al Nord.','2023-01-01','16+','1',0,0,5,50,3,1,2,4,5,6),
+values (1,'God of War Ragnarok','Le avventure di Kratos continuano al Nord','2023-01-01','16+','1',0,0,5,50,3,1,2,4,5,6),
         (2,'Hearthstone','Il gioco di carte con i protagonisti di World of Warcraft','2018-01-01','8+','1',0,0,5,10,2,4,1,1,2,3),
         (3,'GWENT','Il gioco di carte con i protagonisti di The Witcher 3','2018-01-01','8+','1',0,0,5,10,2,4,3,7,8,9);
 
