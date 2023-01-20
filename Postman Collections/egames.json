@@ -70,7 +70,8 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "http://localhost:8081/egames/videogame/id/1"
 					},
 					"response": []
 				}
