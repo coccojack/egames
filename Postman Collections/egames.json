@@ -10,7 +10,7 @@
 			"item": [
 				{
 					"name": "getAll",
-					"_postman_id": "6eae6e37-c63a-4b66-b788-0606ee5c9680",
+					"id": "6eae6e37-c63a-4b66-b788-0606ee5c9680",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -23,7 +23,7 @@
 				},
 				{
 					"name": "uploadImage",
-					"_postman_id": "8f6abaa8-2ce8-4327-b80d-1e5248d2eb07",
+					"id": "8f6abaa8-2ce8-4327-b80d-1e5248d2eb07",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -38,10 +38,7 @@
 									"type": "file",
 									"src": "/C:/Users/groto/Desktop/gamecover/co2adm.png"
 								}
-							],
-							"options": {
-								"formdata": {}
-							}
+							]
 						},
 						"url": {
 							"raw": "http://localhost:8081/egames/videogame/uploadImage?gameId=5",
@@ -66,7 +63,12 @@
 					"response": []
 				}
 			],
-			"_postman_id": "478b7aac-8640-4a76-a1e9-dcffba8eb497"
+			"id": "478b7aac-8640-4a76-a1e9-dcffba8eb497"
+		},
+		{
+			"name": "New Folder",
+			"item": [],
+			"id": "21b26b6a-4dc5-4025-b5e4-2e04d649bdf5"
 		}
 	]
 }
