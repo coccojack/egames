@@ -153,7 +153,7 @@ const Cart = () => {
                       to="/checkout"
                       className="btn btn-dark btn-lg btn-block"
                     >
-                      Go to checkout
+                      Purchase
                     </Link>
                   </div>
                 </div>

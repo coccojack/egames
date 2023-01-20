@@ -273,7 +273,7 @@ const Checkout = () => {
                       className="w-100 btn btn-primary "
                       type="submit" disabled
                     >
-                      Continue to checkout
+                      Purchase
                     </button>
                   </form>
                 </div>
@@ -288,7 +288,7 @@ const Checkout = () => {
     <>
       <Navbar />
       <div className="container my-3 py-3">
-        <h1 className="text-center">Checkout</h1>
+        <h1 className="text-center">Purchase</h1>
         <hr />
         {state.length ? <ShowCheckout /> : <EmptyCart />}
       </div>
