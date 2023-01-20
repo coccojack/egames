@@ -74,6 +74,18 @@
 						"url": "http://localhost:8081/egames/videogame/id/1"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "998016ba-4a23-4574-9775-7630bfa5f630",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "478b7aac-8640-4a76-a1e9-dcffba8eb497"
