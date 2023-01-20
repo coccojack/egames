@@ -76,7 +76,26 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/egames/address/getByCustomerId?customerId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"egames",
+								"address",
+								"getByCustomerId"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "2"
+								}
+							]
+						}
 					},
 					"response": []
 				}
