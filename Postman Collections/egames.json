@@ -69,7 +69,7 @@
 			"name": "Address",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "getByCustomerId",
 					"id": "3f4d3c6d-2dc1-4cd0-88f7-b9a4d3318996",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
