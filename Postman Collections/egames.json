@@ -67,7 +67,20 @@
 		},
 		{
 			"name": "Address",
-			"item": [],
+			"item": [
+				{
+					"name": "New Request",
+					"id": "3f4d3c6d-2dc1-4cd0-88f7-b9a4d3318996",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "21b26b6a-4dc5-4025-b5e4-2e04d649bdf5"
 		}
 	]
