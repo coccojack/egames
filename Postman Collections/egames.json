@@ -83,6 +83,19 @@
 					},
 					"request": {
 						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/egames/videogame/related/2"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "6a244019-7ecb-4fd6-afb3-62dd9bd36576",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
 						"header": []
 					},
 					"response": []
