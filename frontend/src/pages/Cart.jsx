@@ -63,9 +63,9 @@ const Cart = () => {
                               >
                                 <img
                                   src={`data:image/jpeg;base64,${item.image}`}
-                                  onError={({currentTarget})=>{
-                                    currentTarget.onerror=null;
-                                    currentTarget.src='./assets/no_image.jpeg';
+                                  onError={({ currentTarget }) => {
+                                    currentTarget.onerror = null;
+                                    currentTarget.src = './assets/no_image.jpeg';
                                   }}
                                   // className="w-100"
                                   alt={item.title}

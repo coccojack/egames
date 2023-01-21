@@ -13,8 +13,8 @@ const Product = () => {
   const [similarProducts, setSimilarProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
-  const urlNoImage='../assets/no_image.jpeg';
-  const [productImage, setProductImage]= useState(urlNoImage);
+  const urlNoImage = '../assets/no_image.jpeg';
+  const [productImage, setProductImage] = useState(urlNoImage);
   const dispatch = useDispatch();
 
   const addProduct = (product) => {
@@ -25,32 +25,32 @@ const Product = () => {
     const getProduct = async () => {
       setLoading(true);
       setLoading2(true);
-      const response = await fetch(`http://localhost:8081/egames/videogame/id/${id}`,{
+      const response = await fetch(`http://localhost:8081/egames/videogame/id/${id}`, {
         method: 'GET',
       });
       const data = await response.json();
-      if(data.image != null){
+      if (data.image != null) {
         setProductImage(`data:image/jpeg;base64,${data.image}`)
       }
-      else{
+      else {
         setProductImage(urlNoImage);
       }
       setProduct(data);
       setLoading(false);
       const response2 = await fetch(
-        `http://localhost:8081/egames/videogame/related/${id}`,{
-          method: 'GET',
-        }
+        `http://localhost:8081/egames/videogame/related/${id}`, {
+        method: 'GET',
+      }
       );
-      const data2 = await response2.json().catch((error)=>{});
-      if(data2 != null){
+      const data2 = await response2.json().catch((error) => { });
+      if (data2 != null) {
         setSimilarProducts(data2);
         for (let i = 0; i < data2.length; i++) {
-          if(data2[i].image !=null){
-            data2[i].image =`data:image/jpeg;base64,${data2[i].image}`
+          if (data2[i].image != null) {
+            data2[i].image = `data:image/jpeg;base64,${data2[i].image}`
           }
-          else{
-            data2[i].image=urlNoImage;
+          else {
+            data2[i].image = urlNoImage;
           }
         }
       }
@@ -88,7 +88,7 @@ const Product = () => {
         <div className="container my-5 py-2">
           <div className="row">
             <div className="col-md-6 col-sm-12 py-3">
-            <img
+              <img
                 className="img-fluid"
                 src={productImage}
                 alt={product.title}
@@ -157,7 +157,7 @@ const Product = () => {
                   />
                   <div className="card-body">
                     <h5 className="card-title">
-                      {item.title.substring(0, 15)}{item.title.length > 15 ? '...' : null }
+                      {item.title.substring(0, 15)}{item.title.length > 15 ? '...' : null}
                     </h5>
                   </div>
                   {/* <ul className="list-group list-group-flush">
@@ -190,11 +190,11 @@ const Product = () => {
       <Navbar />
       <div className="container">
         <div className="row">
-         {loading ? <Loading /> : <ShowProduct />}
+          {loading ? <Loading /> : <ShowProduct />}
         </div>
         <div className="row my-5 py-5">
           <div className="d-none d-md-block">
-          <h2 className="">You may also Like</h2>
+            <h2 className="">You may also Like</h2>
             <Marquee
               pauseOnHover={true}
               pauseOnClick={true}

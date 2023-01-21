@@ -20,6 +20,10 @@ const Navbar = () => {
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/product">Games</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/newproduct">Add Videogame</NavLink>
+                        </li>
+
                     </ul>
                     <div className="buttons text-center">
                         <NavLink to="/login" className="btn btn-outline-dark m-2"><i className="fa fa-sign-in-alt mr-1"></i> Login</NavLink>

@@ -87,18 +87,18 @@ const Products = () => {
                 <img
                   className="card-img-top p-3"
                   src={`data:image/jpeg;base64,${product.image}`}
-                  onError={({currentTarget})=>{
-                    currentTarget.onerror=null;
-                    currentTarget.src='./assets/no_image.jpeg';
+                  onError={({ currentTarget }) => {
+                    currentTarget.onerror = null;
+                    currentTarget.src = './assets/no_image.jpeg';
                   }}
                   alt="Card"
                 />
                 <div className="card-body">
                   <h5 className="card-title">
-                    {product.title.substring(0, 12)}{product.title.length > 12 ? '...' : null }
+                    {product.title.substring(0, 12)}{product.title.length > 12 ? '...' : null}
                   </h5>
                   <p className="card-text">
-                    {product.description.substring(0, 90)}{product.title.length > 90 ? '...' : null }
+                    {product.description.substring(0, 90)}{product.title.length > 90 ? '...' : null}
                   </p>
                 </div>
                 <ul className="list-group list-group-flush">

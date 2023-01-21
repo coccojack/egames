@@ -8,6 +8,6 @@ public class VideogameDTO {
     private String genre;
     private String description;
     private Float price;
-
+    private Integer stockQuantity;
     private String platformName;
 }

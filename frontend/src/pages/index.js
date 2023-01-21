@@ -1,16 +1,18 @@
 export { default as Home }
-from './Home';
+    from './Home';
 export { default as Products }
-from './Products';
+    from './Products';
 export { default as Product }
-from './Product';
+    from './Product';
+export { default as Newproduct }
+    from './Newproduct';
 export { default as Cart }
-from './Cart';
+    from './Cart';
 export { default as Login }
-from './Login';
+    from './Login';
 export { default as Register }
-from './Register';
+    from './Register';
 export { default as Checkout }
-from './Checkout';
+    from './Checkout';
 export { default as PageNotFound }
-from './PageNotFound';
+    from './PageNotFound';
