@@ -16,7 +16,7 @@ const Newproduct = () => {
         platformName = document.getElementById("platform-name").value;
         price = document.getElementById("price").value;
         stock = document.getElementById("stock-quantity").value;
-        console.log("titolo: " + title, " escizione: " + description + " geneRe" + genre + "platfomr" + platformName + " pRice" + price)
+        console.log("Sending data: title: " + title, " |description: " + description + " |genre" + genre + " |platformName" + platformName + " |price" + price)
         try {
             let res = await fetch("http://localhost:8081/egames/videogame/add", {
                 headers: {
