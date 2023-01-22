@@ -149,6 +149,44 @@
 				}
 			],
 			"id": "21b26b6a-4dc5-4025-b5e4-2e04d649bdf5"
+		},
+		{
+			"name": "Platform",
+			"item": [
+				{
+					"name": "getAll",
+					"id": "0a74c948-3f2c-440f-a113-661f0e4b4bbd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/egames/platform/all"
+					},
+					"response": []
+				}
+			],
+			"id": "782b45e5-592a-4541-9f76-094f2ccf27fa"
+		},
+		{
+			"name": "Genre",
+			"item": [
+				{
+					"name": "getAll",
+					"id": "00cc1afe-d4c0-42dc-aeb3-0562903ee9fb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/egames/genre/all"
+					},
+					"response": []
+				}
+			],
+			"id": "7837e93d-102c-4a0d-a148-2ab2afaa6c5d"
 		}
 	]
 }
