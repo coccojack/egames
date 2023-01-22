@@ -162,7 +162,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8081/egames/videogame/all"
+						"url": "http://localhost:8081/egames/platform/all"
 					},
 					"response": []
 				}
