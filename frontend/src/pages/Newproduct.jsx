@@ -1,12 +1,55 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Footer, Navbar } from "../components";
-
+import { InputLabel, Select, MenuItem } from '@mui/material';
 const Newproduct = () => {
 
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
+    const [loading2, setLoading2] = useState(false);
+    const [platfomList, setPlatformList] = useState([]);
+    const [genreList, setGenreList] = useState([]);
     let title, description, platformName, genre, price, stock;
+    let componentMounted = true;
+
+    useEffect(() => {
+        const getPlatforms = async () => {
+            setLoading(true);
+            setLoading2(true);
+            if (componentMounted) {
+                const response = await fetch("http://localhost:8081/egames/platform/all")
+                    .catch(exception => { });
+                const data2 = await response.json().catch((error) => { });
+                if (data2 != null) {
+                    setPlatformList(data2);
+                }
+                const response2 = await fetch("http://localhost:8081/egames/genre/all")
+                    .catch(exception => { });
+                const data3 = await response2.json().catch((error) => { });
+                if (data3 != null) {
+                    setGenreList(data3);
+                    console.log(data3)
+                }
+                setLoading(false);
+                setLoading2(false);
+            }
+            return () => {
+                componentMounted = false;
+            };
+        };
+        getPlatforms();
+    }, []);
+
+    const handlePlatformChange = (event => {
+        document.getElementById("platform-name").value = event.target.value;
+        console.log(document.getElementById("platform-name").value)
+    });
+
+    const handleGenreChange = (event => {
+        document.getElementById("genre-name").value = event.target.value;
+        console.log(document.getElementById("genre-name").value)
+    });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -44,6 +87,51 @@ const Newproduct = () => {
     }
 
 
+    const Platform = () => {
+        return (
+            <>
+                <div>
+                    <InputLabel id="platform-label">Platform</InputLabel>
+                    <Select
+                        labelId="platform-label"
+                        id="platform-name"
+                        default="Select platform"
+                        onChange={handlePlatformChange}
+                    >
+                        {platfomList.map((plat) => {
+                            return <MenuItem value={plat.name}>{plat.name}</MenuItem>
+                        })}
+                    </Select>
+                    <div className="invalid-feedback">
+                        Please enter a valid platform name.
+                    </div>
+                </div>
+            </>
+        );
+    };
+
+    const Genre = () => {
+        return (
+            <>
+                <div>
+                    <InputLabel id="genre-label">Genre</InputLabel>
+                    <Select
+                        labelId="genre-label"
+                        id="genre-name"
+                        default="Select Genre"
+                        onChange={handleGenreChange}
+                    >
+                        {genreList.map((gen) => {
+                            return <MenuItem value={gen.name}>{gen.name}</MenuItem>
+                        })}
+                    </Select>
+                    <div className="invalid-feedback">
+                        Please enter a valid genre name.
+                    </div>
+                </div>
+            </>
+        );
+    };
 
 
     const ProductForm = () => {
@@ -75,7 +163,6 @@ const Newproduct = () => {
                                                         Valid title is required.
                                                     </div>
                                                 </div>
-
                                                 <div className="col-12 my-1">
                                                     <label for="description" className="form-label">
                                                         Description
@@ -92,34 +179,10 @@ const Newproduct = () => {
                                                     </div>
                                                 </div>
                                                 <div className="col-6 my-1">
-                                                    <label for="platform-name" className="form-label">
-                                                        Platform Name
-                                                    </label>
-                                                    <input
-                                                        type="textarea"
-                                                        className="form-control"
-                                                        id="platform-name"
-                                                        placeholder=""
-                                                        required
-                                                    />
-                                                    <div className="invalid-feedback">
-                                                        Please enter a valid platform name.
-                                                    </div>
+                                                    {loading ? null : <Platform />}
                                                 </div>
                                                 <div className="col-6 my-1">
-                                                    <label for="genre-name" className="form-label">
-                                                        Genre Name
-                                                    </label>
-                                                    <input
-                                                        type="textarea"
-                                                        className="form-control"
-                                                        id="genre-name"
-                                                        placeholder=""
-                                                        required
-                                                    />
-                                                    <div className="invalid-feedback">
-                                                        Please enter a valid genre name.
-                                                    </div>
+                                                    {loading2 ? null : <Genre />}
                                                 </div>
 
                                             </div>

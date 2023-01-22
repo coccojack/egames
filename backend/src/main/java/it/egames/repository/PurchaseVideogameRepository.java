@@ -1,6 +1,6 @@
 package it.egames.repository;
 
-import it.egames.entity.PurchaseVideogame;
+import it.egames.dto.entity.PurchaseVideogame;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

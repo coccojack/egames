@@ -1,7 +1,7 @@
 package it.egames.controller;
 
 import it.egames.dto.VideogameDTO;
-import it.egames.entity.Videogame;
+import it.egames.dto.entity.Videogame;
 import it.egames.service.VideogameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
 package it.egames.repository;
 
-import it.egames.entity.Status;
+import it.egames.dto.entity.Status;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

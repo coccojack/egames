@@ -1,4 +1,4 @@
-package it.egames.entity;
+package it.egames.dto.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
