@@ -152,7 +152,21 @@
 		},
 		{
 			"name": "Platform",
-			"item": [],
+			"item": [
+				{
+					"name": "getAll",
+					"id": "0a74c948-3f2c-440f-a113-661f0e4b4bbd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/egames/videogame/all"
+					},
+					"response": []
+				}
+			],
 			"id": "782b45e5-592a-4541-9f76-094f2ccf27fa"
 		}
 	]
