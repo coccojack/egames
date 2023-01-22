@@ -173,7 +173,7 @@
 			"name": "Genre",
 			"item": [
 				{
-					"name": "getAll Copy",
+					"name": "getAll",
 					"id": "00cc1afe-d4c0-42dc-aeb3-0562903ee9fb",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
