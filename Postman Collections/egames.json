@@ -202,7 +202,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"customerId\":2,\r\n    \"addresId\":1,\r\n    \"total\":50,\r\n    \"purchaseList\":{\r\n        \"1\":1,\r\n        \"2\":2   \r\n    }\r\n}",
+							"raw": "{\r\n    \"customerId\":2,\r\n    \"addressId\":1,\r\n    \"total\":50,\r\n    \"purchaseList\":\r\n    {\r\n        \"1\":1,\r\n        \"2\":1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
