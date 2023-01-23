@@ -190,7 +190,20 @@
 		},
 		{
 			"name": "Purchase",
-			"item": [],
+			"item": [
+				{
+					"name": "New Request",
+					"id": "1a421fbf-c9a2-422c-964e-b4c274990474",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "cdaac780-f028-4c4f-90cb-a391608a30c7"
 		}
 	]
