@@ -192,7 +192,7 @@
 			"name": "Purchase",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "add",
 					"id": "1a421fbf-c9a2-422c-964e-b4c274990474",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
