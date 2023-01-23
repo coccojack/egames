@@ -2,8 +2,37 @@ import React from "react";
 import { Footer, Navbar } from "../components";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 const Checkout = () => {
   const state = useSelector((state) => state.handleCart);
+  let componentMounted = true;
+  const [address, setAddress] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const loadAddress = async () => {
+      setLoading(true);
+      if (componentMounted) {
+        const response = await fetch(`http://localhost:8081/egames/address/getByCustomerId?customerId=2`, {
+          method: 'GET',
+        });
+        const data = await response.json();
+        if (data != null) {
+          setAddress(data[0]);
+          console.log(data[0]);
+        }
+        setLoading(false);
+      }
+      return () => {
+        componentMounted = false;
+      };
+    };
+    loadAddress();
+  }, []);
+
+
+
+
 
   const EmptyCart = () => {
     return (
@@ -22,7 +51,7 @@ const Checkout = () => {
 
   const ShowCheckout = () => {
     let subtotal = 0;
-    let shipping = 30.0;
+    let shipping = 6.0;
     let totalItems = 0;
     state.map((item) => {
       return (subtotal += item.price * item.qty);
@@ -43,18 +72,18 @@ const Checkout = () => {
                 <div className="card-body">
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                      Products ({totalItems})<span>${Math.round(subtotal)}</span>
+                      Products ({totalItems})<span>{Math.round(subtotal)}€</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                       Shipping
-                      <span>${shipping}</span>
+                      <span>{shipping}€</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                       <div>
                         <strong>Total amount</strong>
                       </div>
                       <span>
-                        <strong>${Math.round(subtotal + shipping)}</strong>
+                        <strong>{Math.round(subtotal + shipping)}€</strong>
                       </span>
                     </li>
                   </ul>
@@ -78,8 +107,9 @@ const Checkout = () => {
                           className="form-control"
                           id="firstName"
                           placeholder=""
-                          value=""
+                          value={address ? address.customer.name : ""}
                           required
+                          disabled
                         />
                         <div className="invalid-feedback">
                           Valid first name is required.
@@ -95,8 +125,9 @@ const Checkout = () => {
                           className="form-control"
                           id="lastName"
                           placeholder=""
-                          value=""
+                          value={address ? address.customer.surname : ""}
                           required
+                          disabled
                         />
                         <div className="invalid-feedback">
                           Valid last name is required.
@@ -112,7 +143,9 @@ const Checkout = () => {
                           className="form-control"
                           id="email"
                           placeholder="you@example.com"
+                          value={address ? address.customer.email : ""}
                           required
+                          disabled
                         />
                         <div className="invalid-feedback">
                           Please enter a valid email address for shipping
@@ -129,37 +162,30 @@ const Checkout = () => {
                           className="form-control"
                           id="address"
                           placeholder="1234 Main St"
+                          value={address ? address.line : ""}
                           required
+                          disabled
                         />
                         <div className="invalid-feedback">
                           Please enter your shipping address.
                         </div>
                       </div>
 
-                      <div className="col-12">
-                        <label for="address2" className="form-label">
-                          Address 2{" "}
-                          <span className="text-muted">(Optional)</span>
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="address2"
-                          placeholder="Apartment or suite"
-                        />
-                      </div>
-
                       <div className="col-md-5 my-1">
                         <label for="country" className="form-label">
                           Country
                         </label>
-                        <br />
-                        <select className="form-select" id="country" required>
-                          <option value="">Choose...</option>
-                          <option>India</option>
-                        </select>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="country"
+                          placeholder="Country"
+                          value={address ? address.country : ""}
+                          required
+                          disabled
+                        />
                         <div className="invalid-feedback">
-                          Please select a valid country.
+                          Please enter your country.
                         </div>
                       </div>
 
@@ -167,108 +193,40 @@ const Checkout = () => {
                         <label for="state" className="form-label">
                           State
                         </label>
-                        <br />
-                        <select className="form-select" id="state" required>
-                          <option value="">Choose...</option>
-                          <option>Punjab</option>
-                        </select>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="country"
+                          placeholder="State"
+                          value={address ? address.state : ""}
+                          required
+                          disabled
+                        />
                         <div className="invalid-feedback">
-                          Please provide a valid state.
+                          Please enter your state.
                         </div>
                       </div>
 
                       <div className="col-md-3 my-1">
-                        <label for="zip" className="form-label">
-                          Zip
+                        <label for="zipCode" className="form-label">
+                          Zip Code
                         </label>
                         <input
                           type="text"
                           className="form-control"
-                          id="zip"
-                          placeholder=""
+                          id="zipCode"
+                          placeholder="1234 Main St"
+                          value={address ? address.zipCode : ""}
                           required
+                          disabled
                         />
                         <div className="invalid-feedback">
-                          Zip code required.
+                          Please enter your zip code.
                         </div>
                       </div>
                     </div>
 
                     <hr className="my-4" />
-
-                    <h4 className="mb-3">Payment</h4>
-
-                    <div className="row gy-3">
-                      <div className="col-md-6">
-                        <label for="cc-name" className="form-label">
-                          Name on card
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="cc-name"
-                          placeholder=""
-                          required
-                        />
-                        <small className="text-muted">
-                          Full name as displayed on card
-                        </small>
-                        <div className="invalid-feedback">
-                          Name on card is required
-                        </div>
-                      </div>
-
-                      <div className="col-md-6">
-                        <label for="cc-number" className="form-label">
-                          Credit card number
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="cc-number"
-                          placeholder=""
-                          required
-                        />
-                        <div className="invalid-feedback">
-                          Credit card number is required
-                        </div>
-                      </div>
-
-                      <div className="col-md-3">
-                        <label for="cc-expiration" className="form-label">
-                          Expiration
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="cc-expiration"
-                          placeholder=""
-                          required
-                        />
-                        <div className="invalid-feedback">
-                          Expiration date required
-                        </div>
-                      </div>
-
-                      <div className="col-md-3">
-                        <label for="cc-cvv" className="form-label">
-                          CVV
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="cc-cvv"
-                          placeholder=""
-                          required
-                        />
-                        <div className="invalid-feedback">
-                          Security code required
-                        </div>
-                      </div>
-                    </div>
-
-                    <hr className="my-4" />
-
                     <button
                       className="w-100 btn btn-primary "
                       type="submit" disabled
