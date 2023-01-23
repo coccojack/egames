@@ -10,9 +10,9 @@ values (1, 'Admin', 'Admin', '1985-07-01', 'admin@email.it', 'admin', 1),
        (3, 'User', 'User', '2009-07-01', 'user@email.it', 'user', 2);
 
 -- address
-insert into address (id, country, state, zip_code, customer_id)
-values (1, 'Italy', 'Italy', '95124', 2),
-       (2, 'USA', 'Connecticut', '06051', 3);
+insert into address (id, line, country, state, zip_code, customer_id)
+values (1, 'Via Umberto 13', 'Italy', 'Italy', '95124', 2),
+       (2, 'Ronald Avenue 102', 'USA', 'Connecticut', '06051', 3);
 
 -- status
 insert into status (id, name, description)

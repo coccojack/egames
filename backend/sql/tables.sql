@@ -28,6 +28,7 @@ CREATE TABLE `customer`
 CREATE TABLE `address`
 (
     `id`          bigint NOT NULL AUTO_INCREMENT,
+    `line`        varchar(255) DEFAULT NULL,
     `country`     varchar(255) DEFAULT NULL,
     `state`       varchar(255) DEFAULT NULL,
     `zip_code`    varchar(255) DEFAULT NULL,

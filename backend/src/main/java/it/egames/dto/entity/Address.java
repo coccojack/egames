@@ -12,6 +12,7 @@ public class Address {
     @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "FK_CUSTOMER_ADDRESS"))
     private Customer customer;
+    private String line;
     private String country;
     private String state;
     private String zipCode;
