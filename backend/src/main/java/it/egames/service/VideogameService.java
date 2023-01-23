@@ -1,7 +1,7 @@
 package it.egames.service;
 
 import it.egames.dto.VideogameDTO;
-import it.egames.dto.entity.Videogame;
+import it.egames.entity.Videogame;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 

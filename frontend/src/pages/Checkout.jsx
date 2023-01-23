@@ -8,12 +8,13 @@ const Checkout = () => {
   let componentMounted = true;
   const [address, setAddress] = useState("");
   const [loading, setLoading] = useState(false);
+  const customerid=2;
 
   useEffect(() => {
     const loadAddress = async () => {
       setLoading(true);
       if (componentMounted) {
-        const response = await fetch(`http://localhost:8081/egames/address/getByCustomerId?customerId=2`, {
+        const response = await fetch(`http://localhost:8081/egames/address/getByCustomerId?customerId=`+customerid, {
           method: 'GET',
         });
         const data = await response.json();
@@ -30,6 +31,9 @@ const Checkout = () => {
     loadAddress();
   }, []);
 
+  const handlePurchase = async () => {
+
+  }
 
 
 
@@ -229,7 +233,7 @@ const Checkout = () => {
                     <hr className="my-4" />
                     <button
                       className="w-100 btn btn-primary "
-                      type="submit" disabled
+                      type="submit"
                     >
                       Purchase
                     </button>

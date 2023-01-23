@@ -1,6 +1,6 @@
 package it.egames.service;
 
-import it.egames.dto.entity.Genre;
+import it.egames.entity.Genre;
 import it.egames.repository.GenreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

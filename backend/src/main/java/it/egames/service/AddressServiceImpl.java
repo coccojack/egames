@@ -1,6 +1,6 @@
 package it.egames.service;
 
-import it.egames.dto.entity.Address;
+import it.egames.entity.Address;
 import it.egames.repository.AddressRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

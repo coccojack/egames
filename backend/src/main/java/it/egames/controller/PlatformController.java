@@ -1,6 +1,6 @@
 package it.egames.controller;
 
-import it.egames.dto.entity.Platform;
+import it.egames.entity.Platform;
 import it.egames.service.PlatformService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

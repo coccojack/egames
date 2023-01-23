@@ -1,6 +1,6 @@
 package it.egames.controller;
 
-import it.egames.dto.entity.Address;
+import it.egames.entity.Address;
 import it.egames.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package it.egames.dto.entity;
+package it.egames.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,11 +8,10 @@ import lombok.Data;
 
 @Entity
 @Data
-public class GameMode {
+public class InputType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String description;
-    private boolean internetRequired;
 }

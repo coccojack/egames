@@ -1,6 +1,6 @@
 package it.egames.controller;
 
-import it.egames.dto.entity.Genre;
+import it.egames.entity.Genre;
 import it.egames.service.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

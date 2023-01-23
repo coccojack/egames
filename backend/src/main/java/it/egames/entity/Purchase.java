@@ -1,4 +1,4 @@
-package it.egames.dto.entity;
+package it.egames.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

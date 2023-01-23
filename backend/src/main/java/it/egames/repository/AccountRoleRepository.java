@@ -1,6 +1,6 @@
 package it.egames.repository;
 
-import it.egames.dto.entity.AccountRole;
+import it.egames.entity.AccountRole;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

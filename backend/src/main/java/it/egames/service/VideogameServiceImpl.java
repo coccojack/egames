@@ -1,9 +1,9 @@
 package it.egames.service;
 
 import it.egames.dto.VideogameDTO;
-import it.egames.dto.entity.Genre;
-import it.egames.dto.entity.Platform;
-import it.egames.dto.entity.Videogame;
+import it.egames.entity.Genre;
+import it.egames.entity.Platform;
+import it.egames.entity.Videogame;
 import it.egames.repository.GenreRepository;
 import it.egames.repository.PlatformRepository;
 import it.egames.repository.VideogameRepository;

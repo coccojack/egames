@@ -1,19 +1,18 @@
-package it.egames.dto.entity;
+package it.egames.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Data;
-
-import java.sql.Date;
 
 @Entity
 @Data
-public class SoftwareHouse {
+public class Producer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String country;
-    @Basic
-    private Date foundationDate;
     private String website;
 }
