@@ -1,40 +1,72 @@
 import React from "react";
 import { Footer, Navbar } from "../components";
 import { useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import handleCart from "../redux/reducer/handleCart";
 const Checkout = () => {
   const state = useSelector((state) => state.handleCart);
   let componentMounted = true;
   const [address, setAddress] = useState("");
   const [loading, setLoading] = useState(false);
-  const customerid=2;
-
+  const [trigger, setTrigger] = useState(true);
+  const customerid = 2;
+  const navigate = useNavigate();
   useEffect(() => {
     const loadAddress = async () => {
       setLoading(true);
       if (componentMounted) {
-        const response = await fetch(`http://localhost:8081/egames/address/getByCustomerId?customerId=`+customerid, {
+        const response = await fetch(`http://localhost:8081/egames/address/getByCustomerId?customerId=` + customerid, {
           method: 'GET',
         });
         const data = await response.json();
         if (data != null) {
           setAddress(data[0]);
-          console.log(data[0]);
         }
         setLoading(false);
       }
       return () => {
         componentMounted = false;
+
       };
     };
     loadAddress();
   }, []);
 
-  const handlePurchase = async () => {
-
+  const handlePurchase = async (e, total, address) => {
+    e.preventDefault();
+    if (trigger) {
+      try {
+        var videogameMap = new Map();
+        state.map((item) => {
+          videogameMap.set(item.id, item.qty)
+        });
+        let jsonMap = JSON.stringify(Object.fromEntries(videogameMap));
+        let res = await fetch("http://localhost:8081/egames/purchase/add", {
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          method: "POST",
+          body: JSON.stringify({
+            customerId: customerid,
+            addressId: address.id,
+            total: total,
+            purchaseList: jsonMap
+          })
+        });
+        let resJson = await res.json();
+        if (res.status === 200) {
+          //TODO: FIX EMPTY CART BEHAVIOUR
+          navigate("/");
+        } else {
+          console.log("error")
+        }
+        setTrigger(false);
+      } catch (err) { }
+    } else return null;
   }
-
 
 
 
@@ -100,7 +132,7 @@ const Checkout = () => {
                   <h4 className="mb-0">Billing address</h4>
                 </div>
                 <div className="card-body">
-                  <form className="needs-validation" novalidate>
+                  <form className="needs-validation" onSubmit={(e) => handlePurchase(e, Math.round(subtotal + shipping), address)} >
                     <div className="row g-3">
                       <div className="col-sm-6 my-1">
                         <label for="firstName" className="form-label">
