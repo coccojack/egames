@@ -23,10 +23,10 @@ values (1, 'IN LAVORAZIONE', 'Acquisto in fase di elaborazione. Preparazione per
 
 -- purchase
 insert into purchase (id, purchase_date, total, address_id, customer_id, status_id)
-values (1, '2023-01-01', 50, 1, 2, 3),
-       (2, '2023-01-23', 75, 1, 2, 2),
-       (3, '2023-01-06', 50, 1, 2, 4),
-       (4, '2023-01-30', 75, 1, 2, 1);
+values (1, '2023-01-01', 166, 1, 2, 3),
+       (2, '2023-01-23', 56, 1, 2, 2),
+       (3, '2023-01-06', 26, 1, 2, 4),
+       (4, '2023-01-30', 56, 1, 2, 1);
 
 -- genre
 insert into genre (id, name, description)
@@ -118,8 +118,10 @@ values (1, 'God of War Ragnarok', 'Le avventure di Kratos continuano al Nord', '
 insert into purchase_videogame(id, quantity, purchase_id, videogame_id)
 values (1, 3, 1, 1),
        (2, 1, 1, 2),
-       (3, 1, 3, 2),
-       (4, 1, 3, 3);
+       (3, 1, 2, 1),
+       (4, 1, 3, 2),
+       (5, 1, 3, 3),
+       (6, 1, 4, 1);
 
 -- preferred_videogame
 insert into preferred_videogame(customer_id, videogame_id)
