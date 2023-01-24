@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import handleCart from "../redux/reducer/handleCart";
+import { useDispatch } from "react-redux";
+import { delCart } from "../redux/action";
 const Checkout = () => {
   const state = useSelector((state) => state.handleCart);
   let componentMounted = true;
@@ -13,6 +15,7 @@ const Checkout = () => {
   const [trigger, setTrigger] = useState(true);
   const customerid = 2;
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   useEffect(() => {
     const loadAddress = async () => {
       setLoading(true);
@@ -33,6 +36,14 @@ const Checkout = () => {
     };
     loadAddress();
   }, []);
+
+  const clearCart = (products) => {
+    products.map((product) => {
+      for (let i = 0; i < product.qty; i++) {
+        dispatch(delCart(product));
+      }
+    })
+  };
 
   const handlePurchase = async (e, total, address) => {
     e.preventDefault();
@@ -58,7 +69,7 @@ const Checkout = () => {
         });
         let resJson = await res.json();
         if (res.status === 200) {
-          //TODO: FIX EMPTY CART BEHAVIOUR
+          clearCart(state);
           navigate("/");
         } else {
           console.log("error")
@@ -84,6 +95,9 @@ const Checkout = () => {
       </div>
     );
   };
+
+
+
 
   const ShowCheckout = () => {
     let subtotal = 0;
