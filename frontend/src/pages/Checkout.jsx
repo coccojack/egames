@@ -71,7 +71,7 @@ const Checkout = () => {
           clearCart(state);
           navigate("/");
         } else {
-          console.log("error")
+          console.log("Error handling Purchase")
         }
         setTrigger(false);
       } catch (err) { }

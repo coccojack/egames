@@ -42,12 +42,10 @@ const Newproduct = () => {
 
     const handlePlatformChange = (event => {
         document.getElementById("platform-name").value = event.target.value;
-        console.log(document.getElementById("platform-name").value)
     });
 
     const handleGenreChange = (event => {
         document.getElementById("genre-name").value = event.target.value;
-        console.log(document.getElementById("genre-name").value)
     });
 
     const handleSubmit = async (e) => {
@@ -57,8 +55,6 @@ const Newproduct = () => {
         genre = document.getElementById("genre-name").value;
         platformName = document.getElementById("platform-name").value;
         price = document.getElementById("price").value;
-        stock = document.getElementById("stock-quantity").value;
-        console.log("Sending data: title: " + title, " |description: " + description + " |genre" + genre + " |platformName" + platformName + " |price" + price)
         try {
             let res = await fetch("http://localhost:8081/egames/videogame/add", {
                 headers: {
@@ -71,8 +67,7 @@ const Newproduct = () => {
                     description: description,
                     genre: genre,
                     platformName: platformName,
-                    price: price,
-                    stockQuantity: stock
+                    price: price
                 })
             });
             let resJson = await res.json();
@@ -188,29 +183,13 @@ const Newproduct = () => {
 
                                             <hr className="my-4" />
 
-                                            <h4 className="mb-3">Storage information</h4>
+                                            <h4 className="mb-3">Commercial information</h4>
 
                                             <div className="row gy-3">
-                                                <div className="col-md-6">
-                                                    <label for="stock-quantity" className="form-label">
-                                                        Stock quantity
-                                                    </label>
-                                                    <input
-                                                        type="number"
-                                                        min="0"
-                                                        className="form-control"
-                                                        id="stock-quantity"
-                                                        placeholder=""
-                                                        required
-                                                    />
-                                                    <div className="invalid-feedback">
-                                                        Stock quantity is required
-                                                    </div>
-                                                </div>
 
                                                 <div className="col-md-6">
                                                     <label for="price" className="form-label">
-                                                        Price
+                                                        Price (€)
                                                     </label>
                                                     <input
                                                         type="number"

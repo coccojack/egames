@@ -44,7 +44,6 @@ const Product = () => {
       );
       const data2 = await response2.json().catch((error) => { });
       if (data2 != null) {
-        console.log(data2)
         setSimilarProducts(data2);
         for (let i = 0; i < data2.length; i++) {
           if (data2[i].image != null) {
