@@ -36,12 +36,12 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/groto/Desktop/gamecover/co2adm.png"
+									"src": "/C:/Users/groto/Desktop/gamecovers/co5s5v.png"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8081/egames/videogame/uploadImage?gameId=5",
+							"raw": "http://localhost:8081/egames/videogame/uploadImage?gameId=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -55,7 +55,7 @@
 							"query": [
 								{
 									"key": "gameId",
-									"value": "5"
+									"value": "1"
 								}
 							]
 						}
