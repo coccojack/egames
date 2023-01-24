@@ -187,6 +187,34 @@
 				}
 			],
 			"id": "7837e93d-102c-4a0d-a148-2ab2afaa6c5d"
+		},
+		{
+			"name": "Purchase",
+			"item": [
+				{
+					"name": "add",
+					"id": "1a421fbf-c9a2-422c-964e-b4c274990474",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\":2,\r\n    \"addressId\":1,\r\n    \"total\":50,\r\n    \"purchaseList\":\r\n    {\r\n        \"1\":1,\r\n        \"2\":1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/egames/purchase/add"
+					},
+					"response": []
+				}
+			],
+			"id": "cdaac780-f028-4c4f-90cb-a391608a30c7"
 		}
 	]
 }
