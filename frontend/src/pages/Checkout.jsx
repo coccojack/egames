@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import handleCart from "../redux/reducer/handleCart";
 import { useDispatch } from "react-redux";
 import { delCart } from "../redux/action";
 const Checkout = () => {
