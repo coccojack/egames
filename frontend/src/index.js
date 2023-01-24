@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 
 
-import { Home, Product, Products, Newproduct, Cart, Login, Register, Checkout, PageNotFound } from "./pages"
+import { Home, Product, Products, Newproduct, Cart, Login, Purchases, Register, Checkout, PageNotFound } from "./pages"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<
@@ -40,6 +40,9 @@ root.render(<
             /> <
                 Route path="/checkout"
                 element={< Checkout />}
+            /> <
+                Route path="/purchases"
+                element={< Purchases />}
             /> <
                 Route path="*"
                 element={< PageNotFound />}

@@ -23,6 +23,9 @@ const Navbar = () => {
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/newproduct">Add Videogame</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/purchases">Purchases</NavLink>
+                        </li>
 
                     </ul>
                     <div className="buttons text-center">

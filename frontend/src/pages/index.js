@@ -6,6 +6,8 @@ export { default as Product }
     from './Product';
 export { default as Newproduct }
     from './Newproduct';
+export { default as Purchases }
+    from './Purchases';
 export { default as Cart }
     from './Cart';
 export { default as Login }
