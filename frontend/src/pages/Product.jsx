@@ -44,6 +44,7 @@ const Product = () => {
       );
       const data2 = await response2.json().catch((error) => { });
       if (data2 != null) {
+        console.log(data2)
         setSimilarProducts(data2);
         for (let i = 0; i < data2.length; i++) {
           if (data2[i].image != null) {
@@ -97,10 +98,26 @@ const Product = () => {
               />
             </div>
             <div className="col-md-6 col-md-6 py-5">
-              <h4 className="text-uppercase text-muted">{product.category}</h4>
-              <h1 className="display-5">{product.title}</h1>
-              <h3 className="display-6  my-4">{product.price}€</h3>
-              <p className="lead">{product.description}</p>
+              <h4 className="text-uppercase text-muted">{product.category ? product.category : null}</h4>
+              <h1 className="display-5">{product.title ? product.title : null}</h1>
+              <h3 className="display-6  my-4">{product.price ? product.price : null}€</h3>
+              <p className="lead">Description: {product.description ? product.description : null}</p>
+              <p className="lead">Release Date: {product.releaseDate ? product.releaseDate : null}</p>
+              <p className="lead">Genre: {product.genre ? product.genre.name : null}</p>
+              <p className="lead">Platform: {product.platform ? product.platform.name : null}</p>
+              <p className="lead">Pegi: {product.pegi ? product.pegi : null}</p>
+              <p className="lead">Stock Quantity: {product.stockQuantity ? product.stockQuantity : null}</p>
+              <p className="lead"> Game Modes: {product.gameModeSet ? product.gameModeSet.map((item, i) => <li key={i}>{item.name} - Internet required: {item.internetRequired == true ? "yes" : "no"}</li>) : null}</p>
+              <p className="lead"> Themes: {product.theme ? product.theme.map((item, i) => <li key={i}>{item.name}</li>) : null}</p>
+              <p className="lead"> Languages: {product.languageSet ? product.languageSet.map((item, i) => <li key={i}>{item.name}</li>) : null}</p>
+              <p className="lead"> Input Types: {product.inputTypeSet ? product.inputTypeSet.map((item, i) => <li key={i}>{item.name}</li>) : null}</p>
+              <p className="lead">Minimum player number: {product.playerNum ? product.playerNum : null}</p>
+              <p className="lead">Software House: {product.softwareHouse ? product.softwareHouse.name : null}</p>
+              <p className="lead">Audio Dev: {product.audioDev ? product.audioDev.name : null} {product.audioDev ? product.audioDev.surname : null}</p>
+              <p className="lead">Graph Dev: {product.graphDev ? product.graphDev.name : null} {product.graphDev ? product.graphDev.surname : null}</p>
+              <p className="lead">Game Dev: {product.gameDev ? product.gameDev.name : null} {product.gameDev ? product.gameDev.surname : null}</p>
+              <p className="lead">Adult Game: {product.adultGame == true ? "yes" : "no"}</p>
+              <p className="lead">In-game purchases: {product.ingamePurchases == true ? "yes" : "no"}</p>
               <button
                 className="btn btn-outline-dark"
                 onClick={() => addProduct(product)}
