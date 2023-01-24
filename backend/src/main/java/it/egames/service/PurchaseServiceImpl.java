@@ -90,4 +90,17 @@ public class PurchaseServiceImpl implements PurchaseService{
         purchaseReceiptDTO.setPurchasedVideogameList(purchaseVideogameList);
         return Optional.of(purchaseReceiptDTO);
     }
+
+    @Override
+    public List<PurchaseReceiptDTO> getAllPurchaseReceipt() {
+        List<PurchaseReceiptDTO> results = new ArrayList<>();
+        List<Purchase> purchases=purchaseRepository.findAll();
+        for(Purchase purchase : purchases){
+            PurchaseReceiptDTO purchaseReceiptDTO=new PurchaseReceiptDTO();
+            purchaseReceiptDTO.setPurchase(purchase);
+            purchaseReceiptDTO.setPurchasedVideogameList(purchaseVideogameRepository.findAllByPurchase(purchase));
+            results.add(purchaseReceiptDTO);
+        }
+        return results;
+    }
 }

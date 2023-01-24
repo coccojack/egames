@@ -29,7 +29,6 @@ const Newproduct = () => {
                 const data3 = await response2.json().catch((error) => { });
                 if (data3 != null) {
                     setGenreList(data3);
-                    console.log(data3)
                 }
                 setLoading(false);
                 setLoading2(false);
@@ -98,8 +97,8 @@ const Newproduct = () => {
                         default="Select platform"
                         onChange={handlePlatformChange}
                     >
-                        {platfomList.map((plat) => {
-                            return <MenuItem value={plat.name}>{plat.name}</MenuItem>
+                        {platfomList.map((plat,i) => {
+                            return <MenuItem value={plat.name} key={i}>{plat.name}</MenuItem>
                         })}
                     </Select>
                     <div className="invalid-feedback">
@@ -121,8 +120,8 @@ const Newproduct = () => {
                         default="Select Genre"
                         onChange={handleGenreChange}
                     >
-                        {genreList.map((gen) => {
-                            return <MenuItem value={gen.name}>{gen.name}</MenuItem>
+                        {genreList.map((gen,i) => {
+                            return <MenuItem value={gen.name} key={i}>{gen.name}</MenuItem>
                         })}
                     </Select>
                     <div className="invalid-feedback">

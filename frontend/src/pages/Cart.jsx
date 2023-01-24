@@ -69,8 +69,8 @@ const Cart = () => {
                                   }}
                                   // className="w-100"
                                   alt={item.title}
-                                  width={100}
-                                  height={75}
+                                  width={75}
+                                  height={100}
                                 />
                               </div>
                             </div>
