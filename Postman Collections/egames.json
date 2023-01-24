@@ -214,7 +214,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "all",
 					"id": "26cd405d-1979-4151-8e81-14bd566db3f0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
