@@ -212,6 +212,18 @@
 						"url": "http://localhost:8081/egames/purchase/add"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "26cd405d-1979-4151-8e81-14bd566db3f0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "cdaac780-f028-4c4f-90cb-a391608a30c7"
