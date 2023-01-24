@@ -99,7 +99,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\":\"Crash Bandicoot\",\r\n    \"genre\":\"Azione\",\r\n    \"description\":\"Crash parte all'avventura alla ricerca dei cristalli del potere\",\r\n    \"price\": 30,\r\n    \"platformName\":\"Playstation 5\",\r\n    \"stockQuantity\":3\r\n}",
+							"raw": "{\r\n    \"title\":\"Crash Bandicoot\",\r\n    \"genre\":\"Azione\",\r\n    \"description\":\"Crash parte all'avventura alla ricerca dei cristalli del potere\",\r\n    \"price\": 30,\r\n    \"platformName\":\"Playstation 5\",\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
