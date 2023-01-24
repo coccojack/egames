@@ -4,16 +4,15 @@ values ('Nome', 'Cognome', '2023-01-01', 'nome.cognome@email.it', 'strongpwd',
         (select id from account_role ar where ar.role_name = 'USER'));
 
 -- Op. 2: Aggiunta di un nuovo videogame (piattaforma, genere, software house e sviluppatori pre-esistenti sul sistema)
-insert into videogame(title, description, release_date, pegi, player_num, adult_game, ingame_purchases, stock_quantity,
+insert into videogame(title, description, release_date, pegi, player_num, adult_game, ingame_purchases,
                       price, platform_id, genre_id, software_house_id, game_dev_id, audio_dev_id, graph_dev_id)
-values ('Call of duty 9',
+values ('Call of duty Modern Warfare',
         'Affronta la tua battaglia',
         '2023-01-01',
         '18+',
         '1',
         0,
         1,
-        5,
         50,
         (select id from platform p where p.name = 'XBOX'),
         (select id from genre g where g.name = 'FPS'),

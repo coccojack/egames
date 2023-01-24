@@ -196,7 +196,6 @@ CREATE TABLE `videogame`
     `player_num`        varchar(255) DEFAULT NULL,
     `price`             float        DEFAULT NULL,
     `release_date`      date         DEFAULT NULL,
-    `stock_quantity`    int          DEFAULT NULL,
     `title`             varchar(255) DEFAULT NULL,
     `audio_dev_id`      bigint       DEFAULT NULL,
     `game_dev_id`       bigint       DEFAULT NULL,
