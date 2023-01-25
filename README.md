@@ -1,5 +1,5 @@
 # EGames
-Ecommerce of videoGames
+Ecommerce of Videogames
 
 ## Technologies
     - Database: MySql
